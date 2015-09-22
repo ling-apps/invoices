@@ -1,0 +1,8 @@
+/* BOXES */
+.boxes {
+  width: 60%;
+  display: block;
+  padding: 10px 30px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}

@@ -1,84 +1,9 @@
 /* LAYOUT */
-body, html {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  font-size: 15px;
-  line-height: 22px;
-}
+@import "./layout.css";
+@import "./core.css";
+@import "./tools.css";
+@import "./components/boxes.css";
+@import "./components/list.css";
+@import "./components/form.css";
 
-a {
-  color: #6390D4;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-.layout {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-}
-
-.navigation {
-  flex: 80px;
-  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, .3);
-}
-
-.navigation {
-  flex: 80px;
-}
-
-.content {
-  flex: 2 2 100%;
-}
-
-.content {
-}
-
-/* TOOLS */
-.float-right {
-  float: right;
-}
-
-/* COMPONENTS */
-.box {
-  width: 60%;
-  display: block;
-  padding: 10px 30px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.list {
-  display: table;
-  border-collapse: collapse;
-  border-spacing: 0;
-  list-style: none;
-  table-layout: auto;
-  width: 100%;
-  max-width: 100%;
-  padding: 10px 30px;
-  margin: 0;
-}
-.list-row {
-  display: table-row;
-  line-height: 22px;
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
-  border-bottom: 1px solid #cecece;
-}
-.list-row:hover {
-  background: #F4F7FC;
-}
-.list-row-column {
-  display: table-cell;
-  text-align: right;
-  padding: 10px 20px;
-}
-.list-row-column:first-child {
-  text-align: left;
-}
+@import "./invoice_form.css";

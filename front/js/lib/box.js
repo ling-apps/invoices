@@ -1,13 +1,11 @@
 import React from 'react';
 
-class Block extends React.Component {
+export default class Box extends React.Component {
   render() {
     return (
-      <div className="block">
+      <div className="boxes">
         {this.props.children}
       </div>
     );
   }
 }
-
-export default Block;

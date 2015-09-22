@@ -1,29 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
+import List from './lib/list';
+import InvoiceListItem from './invoice_list_item';
 
 class InvoiceList extends React.Component {
   render() {
-    let invoices = this.props.invoices.map((invoice) => {
-      let url = `/invoices/${invoice.id}`;
-      return (
-        <tr key={invoice.id}>
-          <td><Link to={url}>{invoice.name}</Link></td>
-          <td>{invoice.updatedAt.toLocaleString()}</td>
-        </tr>
-      );
-    });
     return (
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Date</td>
-          </tr>
-        </thead>
-        <tbody>
-          {invoices}
-        </tbody>
-      </table>
+      <List items={this.props.invoices} format={InvoiceListItem} />
     )
   }
 }

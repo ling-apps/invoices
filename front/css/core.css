@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+body, html {
+  font-family: "Lato", "Arial", sans-serif;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+a {
+  color: #6390D4;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
