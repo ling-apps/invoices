@@ -1,12 +1,24 @@
-import React, {Component, PropTypes} from 'react';
-import TextField from './lib/text_field'
-import Button from './lib/button';
+var React = require('react');
+var TextField = require('./lib/text_field')
+var Button = require('./lib/button');
 
-export default class InvoiceItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = this.props.item;
-  }
+const InvoiceItem = React.createClass({
+  propTypes: {
+    item: React.PropTypes.object.isRequired,
+    onChange: React.PropTypes.func,
+    onRemove: React.PropTypes.func
+  },
+
+  getDefaultProps() {
+    return {
+      onChange: () => {},
+      onRemove: () => {}
+    }
+  },
+
+  getInitialState() {
+    return this.props.item;
+  },
 
   saveField(fieldName, value) {
     let state = this.state;
@@ -14,12 +26,12 @@ export default class InvoiceItem extends Component {
     this.setState(state);
     if(this.props.onChange)
       this.props.onChange(state);
-  }
+  },
 
   onRemove() {
     if(this.props.onRemove)
       this.props.onRemove()
-  }
+  },
 
   render() {
     let item = this.state;
@@ -28,8 +40,9 @@ export default class InvoiceItem extends Component {
       <tr className="invoice-item">
         <td>
           <div className="invoice-item-description">
-            <TextField onChange={this.saveField.bind(this, "description")}
-              name="item-description[]" value={item.description} />
+            <TextField onChange={this.saveField.bind(this, 'description')}
+              name="item-description" value={item.description}
+              placeholder="Description" />
           </div>
         </td>
         <td>
@@ -50,16 +63,11 @@ export default class InvoiceItem extends Component {
           </div>
         </td>
         <td>
-          <Button label="X" onClick={this.onRemove.bind(this)} />
+          <Button label="X" onClick={this.onRemove} />
         </td>
       </tr>
     );
   }
-}
+})
 
-InvoiceItem.PropTypes = {
-  item: PropTypes.object.isRequired,
-  onChange: PropTypes.func,
-  onRemove: PropTypes.func
-};
-
+module.exports = InvoiceItem

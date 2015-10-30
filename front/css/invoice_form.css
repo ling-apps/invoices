@@ -20,47 +20,63 @@ p {
   padding-top: 20px;
   max-width: 400px;
 }
-.invoice-info-block .label {
-  color: gray;
-  min-width: 100px;
-  display: inline-block;
-}
 
 .invoice-detail-block {
   clear: both;
   width: 100%;
 }
 
-.invoice-detail-block table {
+.label {
+  color: gray;
+  min-width: 100px;
+  display: inline-block;
+}
+table {
   width: 100%;
-  border: 1px solid gray;
   border-collapse: collapse;
   border-spacing: 0;
   table-layout: fixed;
 }
-.invoice-detail-block th {
+thead {
+  border: 1px solid gray;
+  border-bottom: 0;
+}
+tbody {
+  border: 1px solid gray;
+  border-top: 0;
+}
+thead th {
   background: lightGrey;
   text-align: right;
   padding: 5px 10px;
 }
-.invoice-detail-block th:first-child {
+thead th:first-child {
   text-align: left;
   width: 40%;
 }
-.invoice-detail-block td {
+tfoot th:first-child {
+  text-align: right;
+}
+td {
   text-align: right;
   padding: 5px 10px;
 }
-.invoice-detail-block td:first-child {
+td:first-child {
   text-align: left;
 }
 
-.invoice-payment-block {
-  float: left;
-  max-width: 400px;
+.euro:after {
+  content: '€';
+
 }
 
 .invoice-total-block {
-  float: right;
-  max-width: 400px;
+}
+.note {
+  font-size: .9em;
+  font-style: italic;
+}
+
+.value {
+  font-weight: bold;
 }

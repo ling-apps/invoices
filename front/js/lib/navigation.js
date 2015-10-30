@@ -1,18 +1,13 @@
-import React from 'react';
+var React = require('react')
 
-class Navigation extends React.Component {
+const Navigation = React.createClass({
   render() {
     return (
-      <div className="navigation">
-        <nav>
-          <a className="nav-item">First link</a>
-          <a className="nav-item">Second link</a>
-          <a className="nav-item">Third link</a>
-        </nav>
+      <nav className={this.props.className}>
         {this.props.children}
-      </div>
-    );
+      </nav>
+    )
   }
-}
+})
 
-export default Navigation;
+module.exports = Navigation

@@ -1,18 +1,35 @@
-import React, {Component, PropTypes} from 'react';
-import uuid from 'uuid';
+var React = require('react')
+var uuid = require('uuid')
 
-export default class SelectField extends Component {
+const Textarea = React.createClass({
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    value: React.PropTypes.any,
+    label: React.PropTypes.string,
+    id: React.PropTypes.string,
+    onChange: React.PropTypes.func,
+  },
+
+  getDefaultProps() {
+    return {
+      label: '',
+      value: '',
+      id: uuid.v4(),
+      onChange: null
+    }
+  },
+
   onChange(e) {
     if (this.props.onChange)
-      this.props.onChange(e.target.value);
-  }
+      this.props.onChange(e.target.value)
+  },
 
   renderLabel() {
     if(this.props.label === '') return false
     return (
       <label className='label' htmlFor={this.props.id}>{this.props.label}</label>
     )
-  }
+  },
 
   render() {
     let inputProps = {
@@ -21,29 +38,16 @@ export default class SelectField extends Component {
       id: this.props.id,
       defaultValue: this.props.value,
       className: 'form-control',
-      onChange: this.onChange.bind(this)
-    };
-    let label = this.renderLabel();
+      onChange: this.onChange
+    }
+    let label = this.renderLabel()
     return (
       <div className='form-group'>
         {label}
         <textarea {...inputProps} />
       </div>
-    );
+    )
   }
-}
+})
 
-SelectField.propTypes = {
-  name: PropTypes.string.isRequired,
-  value: PropTypes.any,
-  label: PropTypes.string,
-  id: PropTypes.string,
-  onChange: PropTypes.func,
-};
-
-SelectField.defaultProps = {
-  label: '',
-  value: '',
-  id: uuid.v4(),
-  onChange: null
-};
+module.exports = Textarea

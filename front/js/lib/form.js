@@ -1,36 +1,42 @@
-import React, {Component, PropTypes} from 'react';
+var React = require('react')
 
-export default class Form extends Component {
-  onSubmit() {
+const Form = React.createClass({
+  propTypes: {
+    onSubmit: React.PropTypes.func,
+    onCancel: React.PropTypes.func,
+    id: React.PropTypes.string
+  },
+
+  getDefaultProps() {
+    return {
+      onSubmit: () => {},
+        onCancel: () => {},
+        id: null
+    }
+  },
+
+  onSubmit(e) {
+    e.preventDefault();
     this.props.onSubmit(this.state)
-  }
-
-  onChange(e) {
-    let state = this.state;
-    state[e.target.name] = e.target.value;
-    this.setState(state);
-    this.props.onChange(this.state)
-  }
+  },
 
   onCancel() {
     this.props.onCancel();
-  }
+  },
 
   render() {
+    let props = {
+      className: "form",
+      onSubmit: this.onSubmit,
+      onReset: this.onCancel,
+      id: this.props.id
+    }
     return (
-      <form className="form" onSubmit={this.onSubmit} onReset={this.onCancel}>
+      <form {...props} >
         {this.props.children}
       </form>
     );
   }
-}
+})
 
-Form.propTypes = {
-  onSubmit: PropTypes.func,
-  onCancel: PropTypes.func
-};
-
-Form.defaultPropTypes = {
-  onSubmit: () => {},
-  onCancel: () => {}
-};
+module.exports = Form

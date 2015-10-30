@@ -1,13 +1,13 @@
 var React = require('react')
 
-const Box = React.createClass({
+const ContextAction = React.createClass({
   render() {
     return (
-      <div className="box">
+      <div className="col col-action">
         {this.props.children}
       </div>
     )
   }
 })
 
-module.exports = Box
+module.exports = ContextAction

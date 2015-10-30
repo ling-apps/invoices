@@ -1,13 +1,13 @@
-import React from 'react';
+var React = require('react')
 
-class Content extends React.Component {
+const Content = React.createClass({
   render() {
     return (
       <div className="content">
         {this.props.children}
       </div>
-    );
+    )
   }
-}
+})
 
-export default Content;
+module.exports = Content

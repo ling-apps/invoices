@@ -1,5 +1,6 @@
-import React from 'react';
-import { Router, BrowserHistory as history } from 'react-router';
-import routes from './routes'
+var React = require('react')
+var Router = require('react-router')
+var createBrowserHistory = require('history/lib/createBrowserHistory')
+var routes = require('./routes')
 
-React.render(<Router history={history} children={routes} />, document.body);
+React.render(<Router.Router history={createBrowserHistory()} children={routes} />, document.body);

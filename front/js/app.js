@@ -1,23 +1,36 @@
-require('../css/main.css');
+require('../css/main.css')
 
-import React from 'react';
-import { Link } from 'react-router';
-import Layout from './lib/layout';
-import Navigation from './lib/navigation';
-import Header from './lib/header';
-import Content from './lib/content';
+var React = require('react')
+var Router = require('react-router')
+var Link = Router.Link
+var Layout = require('./lib/layout')
+var Navigation = require('./lib/navigation')
+var Header = require('./lib/header')
+var Title = require('./lib/title')
+var Nav = require('./lib/navigation')
+var Content = require('./lib/content')
 
-class App extends React.Component {
+const App = React.createClass({
   render() {
+    let contextMenu = this.props.children.contextMenu || false
+    let main = this.props.children.main || false
     return (
       <Layout>
-        <Header title="Ling invoicing"></Header>
+        <Header>
+          <Title>Ling Consulting</Title>
+          <Nav className="main-nav">
+            <Link to="/customers" activeClassName="active" className="main-nav-item">Customers</Link>
+            <Link to="/invoices" activeClassName="active" className="main-nav-item">Invoices</Link>
+            <Link to="/users" activeClassName="active" className="main-nav-item">Users</Link>
+          </Nav>
+        </Header>
         <Content>
-          {this.props.children}
+          {contextMenu}
+          {main}
         </Content>
       </Layout>
-    );
+    )
   }
-}
+})
 
-export default App;
+module.exports = App

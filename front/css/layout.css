@@ -5,16 +5,35 @@
   width: 100%;
 }
 
-.navigation {
-  flex: 80px;
-  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, .3);
-}
-
-.navigation {
-  flex: 80px;
-}
-
 .content {
   flex: 2 2 100%;
 }
 
+.header {
+  border-bottom: 1px solid purple;
+}
+
+.header-box {
+  display: flex;
+  width: 60%;
+  padding: 0 30px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.context-menu .box {
+  display: flex;
+}
+
+.context-menu .col-title {
+  font-size: 1.5em;
+}
+
+.col-title {
+  flex: 1 2 60%;
+}
+
+.col-action {
+  flex: 1 2 40%;
+  text-align: right;
+}

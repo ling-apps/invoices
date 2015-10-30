@@ -24,8 +24,16 @@
 .list-row-column {
   display: table-cell;
   text-align: right;
-  padding: 10px 20px;
+  padding: 10px 0;
 }
 .list-row-column:first-child {
   text-align: left;
+}
+
+.list-row-column-actions {
+  text-align: right;
+}
+
+.list-row-column-actions .button {
+  margin-left: 5px;
 }

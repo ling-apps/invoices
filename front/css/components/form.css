@@ -23,4 +23,10 @@
 .form-control:focus {
   border-color: #6390D4;
 }
-
+.form-control-inline {
+  display: inline-block;
+}
+input::placeholder {
+  font-size: .9em;
+  color: #6e6e6e;
+}

@@ -1,9 +1,11 @@
-/* LAYOUT */
 @import "./layout.css";
 @import "./core.css";
+@import "./typo.css";
 @import "./tools.css";
 @import "./components/boxes.css";
 @import "./components/list.css";
 @import "./components/form.css";
+@import "./components/navigation.css";
+@import "./components/button.css";
 
 @import "./invoice_form.css";

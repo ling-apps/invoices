@@ -1,0 +1,19 @@
+.main-nav {
+  line-height: 25px;
+  font-size: 20px;
+  height: 57px;
+  display: inline-block;
+}
+
+.main-nav-item {
+  line-height: 25px;
+  padding: 16px 15px;
+  display: inline-block;
+  outline: none;
+}
+
+.main-nav-item.active {
+  color: purple;
+  border-bottom: 5px solid purple;
+  padding-bottom: 11px;
+}

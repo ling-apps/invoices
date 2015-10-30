@@ -1,12 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
 
 body, html {
-  font-family: "Lato", "Arial", sans-serif;
   margin: 0;
   height: 100%;
   width: 100%;
   font-size: 15px;
   line-height: 22px;
+}
+
+html,
+body,
+input,
+textarea,
+select,
+option,
+label {
+  font-family: "Lato", "Arial", sans-serif;
 }
 
 a {
@@ -15,4 +24,8 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+* {
+  box-sizing: border-box;
 }

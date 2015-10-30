@@ -1,13 +1,13 @@
-import React from 'react';
+var React = require('react')
 
-class Layout extends React.Component {
+const Layout = React.createClass({
   render() {
     return (
       <div className="layout">
         {this.props.children}
       </div>
-    );
+    )
   }
-}
+})
 
-export default Layout;
+module.exports = Layout
