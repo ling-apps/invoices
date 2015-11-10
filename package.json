@@ -22,7 +22,7 @@
     "react": "^0.14.x",
     "react-date-range": "^0.1.5",
     "react-hot-loader": "^1.3.0",
-    "react-router": "^1.0.0-beta4",
+    "react-router": "^1.0.0",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",
     "uuid": "^2.0.1",
