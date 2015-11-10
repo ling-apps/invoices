@@ -1,6 +1,6 @@
 var React = require('react')
 var Router = require('react-router')
-var { Redirect, IndexRoute, Route } = Router
+var { IndexRedirect, Route } = Router
 var App = require('./app')
 var InvoiceList = require('./invoice_list')
 var Invoice = require('./invoice')
@@ -17,6 +17,7 @@ var CustomerShowNav = require('./customer_show_nav')
 
 const routes =
 <Route path="/" component={App}>
+  <IndexRedirect to="/invoices" />
   <Route path="invoices" components={{main: InvoiceList, contextMenu: InvoiceListNav}} />
   <Route path="invoices/new"
     components={{main: Invoice, contextMenu: InvoiceNav}} />
