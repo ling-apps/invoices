@@ -1,6 +1,6 @@
 var React = require('react')
 var Router = require('react-router')
-var { IndexRedirect, Route } = Router
+var {IndexRedirect, Route} = Router
 var App = require('./app')
 var InvoiceList = require('./invoice_list')
 var Invoice = require('./invoice')
@@ -8,7 +8,7 @@ var InvoiceShow = require('./invoice_show')
 var InvoiceListNav = require('./invoice_list_nav')
 var InvoiceShowNav = require('./invoice_show_nav')
 var InvoiceNav = require('./invoice_nav')
-var CustomerList = require('./customer_list')
+var CustomerListContainer = require('containers/customer_list_container')
 var CustomerListNav = require('./customer_list_nav')
 var Customer = require('./customer')
 var CustomerNav = require('./customer_nav')
@@ -18,7 +18,8 @@ var CustomerShowNav = require('./customer_show_nav')
 const routes =
 <Route path="/" component={App}>
   <IndexRedirect to="/invoices" />
-  <Route path="invoices" components={{main: InvoiceList, contextMenu: InvoiceListNav}} />
+  <Route path="invoices"
+    components={{main: InvoiceList, contextMenu: InvoiceListNav}} />
   <Route path="invoices/new"
     components={{main: Invoice, contextMenu: InvoiceNav}} />
   <Route path="invoices/:id"
@@ -26,7 +27,7 @@ const routes =
   <Route path="invoices/:id/edit"
     components={{main: Invoice, contextMenu: InvoiceNav}} />
   <Route path="customers"
-    components={{main: CustomerList, contextMenu: CustomerListNav}} />
+    components={{main: CustomerListContainer, contextMenu: CustomerListNav}} />
   <Route path="customers/new"
     components={{main: Customer, contextMenu: CustomerNav}} />
   <Route path="customers/:id"

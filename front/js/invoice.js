@@ -48,7 +48,8 @@ const Invoice = React.createClass({
           {
             description: '',
             quantity: 0,
-            rate: 30 }
+            rate: 30
+          }
         ],
         vat: 'none',
         taxes: null,
@@ -110,6 +111,13 @@ const Invoice = React.createClass({
     let invoiceTotal = this.state.invoice.items.reduce((sum, item) => {
       return sum + item.rate * item.quantity
     }, 0)
+    let customers = [{value: null, label: "none"}]
+    customers = customers.concat(API.getCustomers().map((customer) => {
+      return {
+        value: customer.id,
+        label: customer.name
+      }
+    }))
     return (
       <Box>
         <Form onSubmit={this.handleInvoiceSubmit} className="invoice-form" id="invoice-form">
@@ -123,14 +131,9 @@ const Invoice = React.createClass({
             </p>
           </div>
           <div className="invoice-customer-block">
-            <h3>
-              <TextField onChange={this.saveField.bind(this, 'customerName')}
-                name="customer.name" placeholder="Customer name" value={invoice.customer} />
-            </h3>
-            <p>
-              <Textarea onChange={this.saveField.bind(this, 'customerAddress')}
-                name="customer.address" placeholder="Customer address" value={invoice.customerAddress} />
-            </p>
+            <SelectField name="invoice.customer" onChange={this.selectCustomer}
+              options={customers}
+              />
           </div>
           <div className="invoice-info-block">
             <p>

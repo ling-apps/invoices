@@ -10,27 +10,30 @@ var Title = require('./lib/title')
 var Nav = require('./lib/navigation')
 var Content = require('./lib/content')
 
-const App = React.createClass({
-  render() {
-    let contextMenu = this.props.children.contextMenu || false
-    let main = this.props.children.main || false
-    return (
-      <Layout>
-        <Header>
-          <Title>Ling Consulting</Title>
-          <Nav className="main-nav">
-            <Link to="/customers" activeClassName="active" className="main-nav-item">Customers</Link>
-            <Link to="/invoices" activeClassName="active" className="main-nav-item">Invoices</Link>
-            <Link to="/users" activeClassName="active" className="main-nav-item">Users</Link>
-          </Nav>
-        </Header>
-        <Content>
-          {contextMenu}
-          {main}
-        </Content>
-      </Layout>
-    )
-  }
-})
+const App = ({
+  contextMenu,
+  main
+}) => (
+  <Layout>
+    <Header>
+      <Title>Ling Consulting</Title>
+      <Nav className="main-nav">
+        <Link to="/customers" activeClassName="active" className="main-nav-item">
+          Customers
+        </Link>
+        <Link to="/invoices" activeClassName="active" className="main-nav-item">
+          Invoices
+        </Link>
+        <Link to="/users" activeClassName="active" className="main-nav-item">
+          Users
+        </Link>
+      </Nav>
+    </Header>
+    <Content>
+      {contextMenu}
+      {main}
+    </Content>
+  </Layout>
+)
 
 module.exports = App

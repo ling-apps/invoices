@@ -17,7 +17,7 @@ const CustomerList = React.createClass({
 
   render() {
     return (
-      <List items={this.state.customers} format={CustomerListItem} 
+      <List items={this.state.customers} format={CustomerListItem}
         onDelete={this.onDeleteCustomer} />
     )
   }

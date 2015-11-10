@@ -43,6 +43,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
-    extensions: ['', '.js', '.json']
+    extensions: ['', '.js', '.json'],
+    root: path.join(__dirname, 'front', 'js')
   }
 };

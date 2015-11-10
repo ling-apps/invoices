@@ -34,8 +34,14 @@ const SelectField = React.createClass({
 
   renderOptions() {
     return this.props.options.map((option) => {
-      let key = `${this.props.id}-${option}`
-      return (<option key={key} value={option}>{option}</option>)
+      let value, label = option
+      if (undefined !== option.value) {
+        value = option.value
+        label = option.label
+      }
+      console.log(value, label)
+      let key = `${this.props.id}-${value}`
+      return (<option key={key} value={value}>{label}</option>)
     })
   },
 
